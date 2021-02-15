@@ -30,7 +30,7 @@ spec:
           replicas: 1
           monitoring: true
           variables:
-            AUTH_ENABLED: False
+            AUTH_ENABLED: false
             EAGERLOAD_FUNCTION_INDEX: "True"
             EAGERLOAD_MODELS: "true"
             EVENTS_ENABLED: "false"
