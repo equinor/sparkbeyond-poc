@@ -8,7 +8,7 @@ spec:
       build:
         from: master
   privateImageHubs:
-    pquay.io/sparkbeyond/example-models:
+    quay.io/sparkbeyond/example-models:
       username: sparkbeyond+eq
       email: ctim@equinor.com
   components:
