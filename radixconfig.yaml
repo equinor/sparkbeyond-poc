@@ -1,0 +1,39 @@
+apiVersion: radix.equinor.com/v1
+kind: RadixApplication
+metadata:
+  name: sparkbeyond-poc
+spec:
+  environments:
+    - name: dev
+      build:
+        from: master
+  privateImageHubs:
+  pquay.io/sparkbeyond/example-models:
+    username: sparkbeyond+eq
+    email: ctim@equinor.com
+  components:
+    - name: prediction
+      image: quay.io/sparkbeyond/example-models:1.34.0-titanic
+      ports:
+        - name: http
+          port: 8000
+      publicPort: http
+      resources:
+        requests:
+          memory: "20000Mi"
+          cpu: "6000m"
+        limits:
+          memory: "320000Mi"
+          cpu: "8000m"
+      environmentConfig:
+        - environment: dev
+          replicas: 1
+          monitoring: true
+          variables:
+            AUTH_ENABLED: "False"
+            EAGERLOAD_FUNCTION_INDEX: "True"
+            EAGERLOAD_MODELS: "true"
+            EVENTS_ENABLED: "false"
+  dnsAppAlias:
+    environment: dev
+    component: prediction
