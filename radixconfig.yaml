@@ -27,6 +27,9 @@ spec:
           cpu: "8000m"
       environmentConfig:
         - environment: dev
+          horizontalScaling:
+            minReplicas: 1
+            maxReplicas: 3
           replicas: 1
           monitoring: true
           variables:
