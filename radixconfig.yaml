@@ -8,12 +8,12 @@ spec:
       build:
         from: master
   privateImageHubs:
-    quay.io:
-      username: sparkbeyond+eq
+    acrsepessparkbeyondtest.azurecr.io:
+      username: acrsepessparkbeyondtest
       email: ctim@equinor.com
   components:
     - name: prediction
-      image: quay.io/sparkbeyond/example-models:1.35.0-kingcounty
+      image: acrsepessparkbeyondtest.azurecr.io/sparkbeyond/predbox/0df3ef75-e5a0-4088-8011-c29890c18e23:4
       ports:
         - name: http
           port: 8000
