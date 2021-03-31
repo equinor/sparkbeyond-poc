@@ -38,7 +38,7 @@ spec:
             EAGERLOAD_MODELS: "true"
             EVENTS_ENABLED: "false"
     - name: logimputation
-      image: crsepessparkbeyondtest.azurecr.io/sparkbeyond/predbox/356d7c93-6262-48d9-b067-3a12f216a4ab:17
+      image: acrsepessparkbeyondtest.azurecr.io/sparkbeyond/predbox/356d7c93-6262-48d9-b067-3a12f216a4ab:17
       ports:
         - name: http
           port: 8000
