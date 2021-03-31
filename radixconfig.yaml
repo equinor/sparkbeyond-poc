@@ -13,7 +13,32 @@ spec:
       email: ctim@equinor.com
   components:
     - name: prediction
-      image: acrsepessparkbeyondtest.azurecr.io/sparkbeyond/predbox/0df3ef75-e5a0-4088-8011-c29890c18e23:4
+      image: acrsepessparkbeyondtest.azurecr.io/sparkbeyond/predbox/e8e6717c-f115-494b-b01d-db12de242a68:1
+      ports:
+        - name: http
+          port: 8000
+      publicPort: http
+      resources:
+        requests:
+          memory: "20000Mi"
+          cpu: "6000m"
+        limits:
+          memory: "320000Mi"
+          cpu: "8000m"
+      environmentConfig:
+        - environment: dev
+          horizontalScaling:
+            minReplicas: 1
+            maxReplicas: 3
+          replicas: 1
+          monitoring: true
+          variables:
+            AUTH_ENABLED: false
+            EAGERLOAD_FUNCTION_INDEX: "True"
+            EAGERLOAD_MODELS: "true"
+            EVENTS_ENABLED: "false"
+    - name: LogImputation
+      image: crsepessparkbeyondtest.azurecr.io/sparkbeyond/predbox/356d7c93-6262-48d9-b067-3a12f216a4ab:17
       ports:
         - name: http
           port: 8000
