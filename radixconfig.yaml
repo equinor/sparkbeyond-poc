@@ -42,7 +42,6 @@ spec:
       ports:
         - name: http
           port: 8000
-      publicPort: http
       resources:
         requests:
           memory: "20000Mi"
