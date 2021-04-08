@@ -38,6 +38,8 @@ spec:
             EAGERLOAD_MODELS: "true"
             EVENTS_ENABLED: "false"
             LOG_LEVEL: "DEBUG"
+            EAGERLOAD_FUNCTION_INDEX: false
+            EAGERLOAD_MODELS: false
     - name: logimputation
       image: acrsepessparkbeyondtest.azurecr.io/sparkbeyond/predbox/356d7c93-6262-48d9-b067-3a12f216a4ab:17
       ports:
