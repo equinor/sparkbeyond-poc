@@ -13,7 +13,7 @@ spec:
       email: ctim@equinor.com
   components:
     - name: prediction
-      image: acrsepessparkbeyondtest.azurecr.io/sparkbeyond/predbox/2c2487ec-82cd-4617-89f6-c9c820767093:1
+      image: acrsepessparkbeyondtest.azurecr.io/sparkbeyond/predbox/0dda94fe-c939-4871-ae0b-5f80c0f1f99b:1
       ports:
         - name: http
           port: 8000
