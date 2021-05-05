@@ -13,6 +13,8 @@ spec:
       email: ctim@equinor.com
   components:
     - name: prediction
+      ingressConfiguration:
+        - websocketfriendly
       image: acrsepessparkbeyondtest.azurecr.io/sparkbeyond/predbox/0dda94fe-c939-4871-ae0b-5f80c0f1f99b:1
       ports:
         - name: http
@@ -24,7 +26,7 @@ spec:
           cpu: "6000m"
         limits:
           memory: "320000Mi"
-          cpu: "8000m"
+          cpu: "7000m"
       environmentConfig:
         - environment: dev
           horizontalScaling:
@@ -41,6 +43,8 @@ spec:
             EAGERLOAD_FUNCTION_INDEX: false
             EAGERLOAD_MODELS: false
     - name: logimputation
+      ingressConfiguration:
+        - websocketfriendly
       image: acrsepessparkbeyondtest.azurecr.io/sparkbeyond/predbox/356d7c93-6262-48d9-b067-3a12f216a4ab:17
       ports:
         - name: http
@@ -52,7 +56,7 @@ spec:
           cpu: "6000m"
         limits:
           memory: "32000Mi"
-          cpu: "8000m"
+          cpu: "7000m"
       environmentConfig:
         - environment: dev
           horizontalScaling:
