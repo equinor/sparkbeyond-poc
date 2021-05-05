@@ -51,7 +51,7 @@ spec:
           memory: "20000Mi"
           cpu: "6000m"
         limits:
-          memory: "320000Mi"
+          memory: "32000Mi"
           cpu: "8000m"
       environmentConfig:
         - environment: dev
