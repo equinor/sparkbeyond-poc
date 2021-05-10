@@ -52,7 +52,7 @@ spec:
       publicPort: http
       resources:
         requests:
-          memory: "20000Mi"
+          memory: "32000Mi"
           cpu: "6000m"
         limits:
           memory: "32000Mi"
