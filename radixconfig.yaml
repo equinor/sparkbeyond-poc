@@ -31,7 +31,7 @@ spec:
         - environment: dev
           horizontalScaling:
             minReplicas: 1
-            maxReplicas: 1
+            maxReplicas: 2
           replicas: 1
           monitoring: true
           variables:
@@ -61,7 +61,7 @@ spec:
         - environment: dev
           horizontalScaling:
             minReplicas: 1
-            maxReplicas: 1
+            maxReplicas: 2
           replicas: 1
           monitoring: true
           variables:
